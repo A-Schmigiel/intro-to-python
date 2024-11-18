@@ -101,7 +101,9 @@ add_one(add_one(add_one(add_one(add_one(add_one(1))))))
 
 # EXPRESSIONS PLAYGROUND BEGINS
 
-
+jenny = ((((3 * 10 ** 6) + (20000 / 2) - (100 ** add_one(2)) + (100//9) % 7) - (add_one(199) * 203.431 + 22 ** 4)) * 5)
+jenny = int(jenny)
+print(f'Calling: {jenny}')
 
 # EXPRESSIONS PLAYGROUND ENDS
 

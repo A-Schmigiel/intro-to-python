@@ -28,6 +28,12 @@
 # optional. Don't forget about your assessment!
 
 def play_game():
+  # board_size = int(input("How many rows should this game have? "))
+  # board = []
+  # i=0
+  # while i < board_size:
+  #     board.append('.' * board_size)
+  #     i+=1
   board = [
     [".", ".", "."],
     [".", ".", "."],
@@ -41,11 +47,14 @@ def play_game():
     # We then need to convert it to a number using `int`
     row = int(input("Enter a row: "))
     column = int(input("Enter a column: "))
-    board = make_move(board, row, column, player)
-    if player == "X":
-      player = "O"
+    if board[row][column] == ".":
+      board = make_move(board, row, column, player)
+      if player == "X":
+        player = "O"
+      else:
+        player = "X"
     else:
-      player = "X"
+      print("Invalid move. Please try again")
   print(print_board(board))
   print("Game over!")
 
@@ -98,15 +107,19 @@ groups_to_check = [
 ]
 
 def is_game_over(board):
-  # We go through our groups
-  for group in groups_to_check:
-    # If any of them are empty, they're clearly not a
-    # winning row, so we skip them.
-    if is_group_complete(board, group[0], group[1], group[2]):
-      if are_all_cells_the_same(board, group[0], group[1], group[2]):
-        return True # We found a winning row!
+  if not any("." in row for row in board):
+    return True
+  else:
+    # We go through our groups
+    for group in groups_to_check:
+      # If any of them are empty, they're clearly not a
+      # winning row, so we skip them.
+      if is_group_complete(board, group[0], group[1], group[2]):
+        if are_all_cells_the_same(board, group[0], group[1], group[2]):
+          return True # We found a winning row!
         # Note that return also stops the function
-  return False # If we get here, we didn't find a winning row
+    return False # If we get here, we didn't find a winning row
+
 
 # And test it out:
 

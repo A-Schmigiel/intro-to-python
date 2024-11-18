@@ -9,7 +9,7 @@
 
 # * Dictionaries: A collection of keys mapped to values
 
-# You know how in a dictionary you look up a word and it
+# You know how in a dictionary you look up a word, and it
 # provides a definition? In that sense, the 'word' is the
 # key, and the 'definition' is the value.
 
@@ -18,6 +18,7 @@
 my_dictionary = {
   "String": "A sequence of characters",
   "List": "A sequence of any item",
+  "Dictionary": "A collection of keys mapped to values"
 }
 
 # Note that:
@@ -40,6 +41,6 @@ print("  " + my_dictionary["List"])
 # print out the value below.
 
 print("A Dictionary is:")
-# ...
+print(" " + my_dictionary["Dictionary"])
 
 # Once you're done, move on to 038_dict_operations.py
